@@ -1,0 +1,32 @@
+{
+  "name": "datatables-query",
+  "version": "0.0.0",
+  "description": "A module for doing MongoDB pagination and search, based on DataTables query model. Relies on Express and Mongoose.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "datatables",
+    "pagination",
+    "mongoose",
+    "MongoDB",
+    "Express",
+    "node",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "Vinicius Teixeira",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-jscs": "^2.1.0",
+    "grunt-release": "^0.13.0",
+    "sinon": "^1.16.1"
+  }
+}
