@@ -58,7 +58,7 @@ promise.
 ```javascript
 
 app.post('/path/to/api/endpoint', function (req, res) {
-    var Model = require('./path/to/model'),n
+    var Model = require('./path/to/model'),
         datatablesQuery = require('datatables-query'),
         params = req.body,
         query = datatablesQuery(Model);
@@ -76,7 +76,44 @@ That's all folks. Your table should be working just fine.
 ## Assumptions
 
 As noted above, it is assumed that the server parses the request using extended urlencoded and that the data object is
-a Mongoose object. You could
+a Mongoose object.
+
+Datatables with serverSide processing enabled makes POST requests with content-type `application/x-www-form-urlencoded`,
+and express' module body parser makes it easiear to work with this data, transforming it to JSON and parsing arrays and
+objects.
+
+## Using Without Datatables
+
+One could use this module without datatables in the front-end making requests. For this to work, the POST body must
+be a configuration object equivalent to the one shown below:
+
+```javascript
+// req.body should be equivalent to:
+{
+    "draw": "3",  // datatable stuff, but is mandatory nonetheless
+    "start": "0",
+    "length": "10",
+    "search": {
+        "value": ""
+    },
+    "columns": [
+        {
+            "data": "name", // field name in the MongoDB Schema
+            "searchable": "true", // mandatory
+            "orderable": "true" // mandatory
+        },
+        {
+            // .. same structure as above for each field
+        }
+    ],
+    "order": [
+        {
+            "column": "1", // index of the column used for sorting
+            "dir": "asc" // direction of sorting ('asc' | 'desc')
+        }
+    ]
+}
+```
 
 ## TODO
 
@@ -87,7 +124,7 @@ a Mongoose object. You could
 ## Contributing
 
 Feel free to fork and mess with this code. But, before opening PRs, be sure that you adhere to the Code Style and Conventions
-(run `grunt lint`) and add as many tests as needed to ensure your code is working as expected, or correct tests if wrong.
+(run `grunt lint`) and add/correct as many tests as needed to ensure your code is working as expected.
 
 ## License
 
