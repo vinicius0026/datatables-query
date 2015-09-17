@@ -1,7 +1,7 @@
 # datatablesQuery
 
 datatablesQuery is a module for making the integration between front-end tables using
-[datatables](https://www.datatables.net/) and a REST API, node.js, express, MongoDB and Mongoose backed Server easier.
+[datatables](https://www.datatables.net/) and a REST API, node.js, express, MongoDB and Mongoose backed Servers, easier.
 
 The main purpose is dealing with server side processing available in datatables, making it easy to integrate client and
 server.
@@ -11,7 +11,7 @@ server.
 Install the module.
 
 ```
-npm install
+npm install datatables-query
 ```
 
 In your front-end, configure your DataTable to use serverSide processing and Ajax. The request type MUST be 'POST'.
