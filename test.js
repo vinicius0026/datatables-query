@@ -364,6 +364,9 @@ describe('datatablesQuery tests', function () {
                 error = sinon.spy();
 
             var params = {
+                "draw": "1",
+                "start": "10",
+                "length": "10",
                 "order": [{
                     "column": "0",
                     "dir": "desc"
@@ -399,6 +402,9 @@ describe('datatablesQuery tests', function () {
                 error = sinon.spy();
 
             var params = {
+                "draw": "1",
+                "start": "10",
+                "length": "10",
                 "columns": [
                     {
                         "data": "name",
@@ -442,72 +448,4 @@ describe('datatablesQuery tests', function () {
             ]);
         });
     });
-
-    var params = {
-        "draw": "3",
-        "start": "0",
-        "length": "10",
-        "search": {
-            "value": "",
-            "regex": "false"
-        },
-        "columns": [
-            {
-                "data": "",
-                "name": "",
-                "searchable": "false",
-                "orderable": "false",
-                "search": {
-                    "value": "",
-                    "regex": "false"
-                }
-            },
-            {
-                "data": "name",
-                "name": "",
-                "searchable": "true",
-                "orderable": "true",
-                "search": {
-                    "value": "",
-                    "regex": "false"
-                }
-            },
-            {
-                "data": "email",
-                "name": "",
-                "searchable": "true",
-                "orderable": "true",
-                "search": {
-                    "value": "",
-                    "regex": "false"
-                }
-            },
-            {
-                "data": "role",
-                "name": "",
-                "searchable": "true",
-                "orderable": "true",
-                "search": {
-                    "value": "",
-                    "regex": "false"
-                }
-            },
-            {
-                "data": "",
-                "name": "",
-                "searchable": "false",
-                "orderable": "false",
-                "search": {
-                    "value": "",
-                    "regex": "false"
-                }
-            }
-        ],
-        "order": [
-            {
-                "column": "1",
-                "dir": "asc"
-            }
-        ]
-    };
 });
