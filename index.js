@@ -172,7 +172,7 @@ var async = require('async'),
                     function fetchRecordsTotal (cb) {
                         Model.count({}, function (err, count) {
                             if (err) {
-                                cb(err);
+                                return cb(err);
                             }
                             recordsTotal = count;
                             cb();
@@ -181,7 +181,7 @@ var async = require('async'),
                     function fetchRecordsFiltered (cb) {
                         Model.count(findParameters, function (err, count) {
                             if (err) {
-                                cb(err);
+                                return cb(err);
                             }
                             recordsFiltered = count;
                             cb();
@@ -195,7 +195,7 @@ var async = require('async'),
                             .sort(sortParameters)
                             .exec(function (err, results) {
                                 if (err) {
-                                    cb(err);
+                                    return cb(err);
                                 }
                                 cb(null, {
                                     draw: draw,
