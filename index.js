@@ -133,6 +133,11 @@ var async = require('async'),
     },
 
     buildSelectParameters = function (params) {
+
+        if (!params || !params.columns || !Array.isArray(params.columns)) {
+            return null;
+        }
+
         return params
             .columns
             .map(col => col.data)
@@ -175,8 +180,9 @@ var async = require('async'),
                             return cb(new Error('Some parameters are missing or in a wrong state. ' +
                             'Could be any of draw, start or length'));
                         }
-                        if (!findParameters || !sortParameters) {
-                            return cb(new Error('Invalid findParameters or sortParameters'));
+
+                        if (!findParameters || !sortParameters || !selectParameters) {
+                            return cb(new Error('Invalid findParameters or sortParameters or selectParameters'));
                         }
                         cb();
                     },
