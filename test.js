@@ -60,15 +60,15 @@ describe('datatablesQuery tests', function () {
                 },
                 columns: [
                     {
-                        "data": "",
-                        "name": "",
-                        "searchable": "false"
+                        data: '',
+                        name: '',
+                        searchable: 'false'
 
                     },
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true'
                     }
                 ]
             };
@@ -87,19 +87,17 @@ describe('datatablesQuery tests', function () {
                     },
                     columns: [
                         {
-                            data: "name",
-                            name: "",
-                            searchable: "true"
+                            data: 'name',
+                            name: '',
+                            searchable: 'true'
                         },
                         {
-                            "data": "email",
-                            "name": "",
-                            "searchable": "true"
+                            data: 'email',
+                            name: '',
+                            searchable: 'true'
                         }
                     ]
                 };
-
-                //{ $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] }
 
                 expect(query.buildFindParameters(multipleSearchableColumns))
                     .to.deep.equal({
@@ -118,23 +116,23 @@ describe('datatablesQuery tests', function () {
 
         it('should build ascending sort parameters correctly', function (done) {
             var params = {
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
-                "order": [{
-                    "column": "0",
-                    "dir": "asc"
+                order: [{
+                    column: '0',
+                    dir: 'asc'
                 }]
             };
 
@@ -144,23 +142,23 @@ describe('datatablesQuery tests', function () {
 
         it('should build descending sort parameters correctly', function (done) {
             var params = {
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
-                "order": [{
-                    "column": "1",
-                    "dir": "desc"
+                order: [{
+                    column: '1',
+                    dir: 'desc'
                 }]
             };
 
@@ -170,23 +168,23 @@ describe('datatablesQuery tests', function () {
 
         it('should return null if a non orderable column is set as sort param', function (done) {
             var params = {
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "false"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'false'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
-                "order": [{
-                    "column": "0",
-                    "dir": "desc"
+                order: [{
+                    column: '0',
+                    dir: 'desc'
                 }]
             };
 
@@ -194,51 +192,52 @@ describe('datatablesQuery tests', function () {
             done();
         });
 
-        it('should return a correct search param if non searchable but orderable column is set as sort param', function (done) {
-            var params = {
-                "columns": [
-                    {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
-                    },
-                    {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "false",
-                        "orderable": "true"
-                    }
-                ],
-                "order": [{
-                    "column": "1",
-                    "dir": "desc"
-                }]
-            };
+        it('should return a correct search param if non searchable but orderable column is set as sort param',
+            function (done) {
+                var params = {
+                    columns: [
+                        {
+                            data: 'name',
+                            name: '',
+                            searchable: 'true',
+                            orderable: 'true'
+                        },
+                        {
+                            data: 'email',
+                            name: '',
+                            searchable: 'false',
+                            orderable: 'true'
+                        }
+                    ],
+                    order: [{
+                        column: '1',
+                        dir: 'desc'
+                    }]
+                };
 
-            expect(query.buildSortParameters(params)).to.equal('-email');
-            done();
-        });
+                expect(query.buildSortParameters(params)).to.equal('-email');
+                done();
+            });
 
         it('should return null if an out of bound column is set as sort param', function (done) {
             var params = {
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
-                "order": [{
-                    "column": "2",
-                    "dir": "desc"
+                order: [{
+                    column: '2',
+                    dir: 'desc'
                 }]
             };
 
@@ -248,20 +247,19 @@ describe('datatablesQuery tests', function () {
 
         it('should return null if params doesnot contain an order field', function (done) {
             var params = {
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
-                    },
-
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
+                    }
                 ]
             };
 
@@ -271,41 +269,41 @@ describe('datatablesQuery tests', function () {
 
         it('should return null if params.order.column is not provided or is not a number', function (done) {
             var paramsSet = [{
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
-                "order": [{
-                    "dir": "desc"
+                order: [{
+                    dir: 'desc'
                 }]
             }, {
-                "columns": [
+                columns: [
                     {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
-                "order": [{
-                    "column": "abc",
-                    "dir": "desc"
+                order: [{
+                    column: 'abc',
+                    dir: 'desc'
                 }]
             }];
 
@@ -318,13 +316,47 @@ describe('datatablesQuery tests', function () {
 
         it('should return null if params.columns is not an array', function (done) {
             var params = {
-                "order": [{
-                    "column": "1",
-                    "dir": "desc"
+                order: [{
+                    column: '1',
+                    dir: 'desc'
                 }]
             };
 
             expect(query.buildSortParameters(params)).to.equal(null);
+            done();
+        });
+    });
+
+    describe('buildSelectParameters tests', function () {
+        var query = datatablesQuery({});
+
+        it('should include only and all columns passed in parameters in the select params', function (done) {
+            var params = {
+                columns: [
+                    {
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
+                    },
+                    {
+                        data: 'email',
+                        name: '',
+                        searchable: 'false',
+                        orderable: 'true'
+                    }
+                ],
+                order: [{
+                    column: '1',
+                    dir: 'desc'
+                }]
+            };
+
+            expect(query.buildSelectParameters(params))
+                .to.deep.equal({
+                    email: 1,
+                    name: 1
+                });
             done();
         });
     });
@@ -361,17 +393,17 @@ describe('datatablesQuery tests', function () {
         it('should reject promise if findParams is null', function (done) {
             var query = datatablesQuery({}),
                 success = sinon.spy(),
-                error = sinon.spy();
+                error = sinon.spy(),
 
-            var params = {
-                "draw": "1",
-                "start": "10",
-                "length": "10",
-                "order": [{
-                    "column": "0",
-                    "dir": "desc"
-                }]
-            };
+                params = {
+                    draw: '1',
+                    start: '10',
+                    length: '10',
+                    order: [{
+                        column: '0',
+                        dir: 'desc'
+                    }]
+                };
 
             expect(query.buildFindParameters(params)).to.equal(null);
 
@@ -399,31 +431,30 @@ describe('datatablesQuery tests', function () {
         it('should reject promise if sortParams is null', function (done) {
             var query = datatablesQuery({}),
                 success = sinon.spy(),
-                error = sinon.spy();
-
-            var params = {
-                "draw": "1",
-                "start": "10",
-                "length": "10",
-                "columns": [
-                    {
-                        "data": "name",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "false"
-                    },
-                    {
-                        "data": "email",
-                        "name": "",
-                        "searchable": "true",
-                        "orderable": "true"
-                    }
-                ],
-                "order": [{
-                    "column": "0",
-                    "dir": "desc"
-                }]
-            };
+                error = sinon.spy(),
+                params = {
+                    draw: '1',
+                    start: '10',
+                    length: '10',
+                    columns: [
+                        {
+                            data: 'name',
+                            name: '',
+                            searchable: 'true',
+                            orderable: 'false'
+                        },
+                        {
+                            data: 'email',
+                            name: '',
+                            searchable: 'true',
+                            orderable: 'true'
+                        }
+                    ],
+                    order: [{
+                        column: '0',
+                        dir: 'desc'
+                    }]
+                };
 
             expect(query.buildSortParameters(params)).to.equal(null);
 
