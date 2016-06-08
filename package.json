@@ -1,6 +1,6 @@
 {
   "name": "datatables-query",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A module for doing MongoDB pagination and search, based on DataTables query model. Relies on Express and Mongoose.",
   "repository": "https://github.com/fiddus/datatables-query.git",
   "main": "index.js",
