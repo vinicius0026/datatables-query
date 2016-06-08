@@ -60,15 +60,15 @@ describe('datatablesQuery tests', function () {
                 },
                 columns: [
                     {
-                        data: "",
-                        name: "",
-                        searchable: "false"
+                        data: '',
+                        name: '',
+                        searchable: 'false'
 
                     },
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true'
                     }
                 ]
             };
@@ -87,14 +87,14 @@ describe('datatablesQuery tests', function () {
                     },
                     columns: [
                         {
-                            data: "name",
-                            name: "",
-                            searchable: "true"
+                            data: 'name',
+                            name: '',
+                            searchable: 'true'
                         },
                         {
-                            data: "email",
-                            name: "",
-                            searchable: "true"
+                            data: 'email',
+                            name: '',
+                            searchable: 'true'
                         }
                     ]
                 };
@@ -118,21 +118,21 @@ describe('datatablesQuery tests', function () {
             var params = {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    column: "0",
-                    dir: "asc"
+                    column: '0',
+                    dir: 'asc'
                 }]
             };
 
@@ -144,21 +144,21 @@ describe('datatablesQuery tests', function () {
             var params = {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    column: "1",
-                    dir: "desc"
+                    column: '1',
+                    dir: 'desc'
                 }]
             };
 
@@ -170,21 +170,21 @@ describe('datatablesQuery tests', function () {
             var params = {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "false"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'false'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    column: "0",
-                    dir: "desc"
+                    column: '0',
+                    dir: 'desc'
                 }]
             };
 
@@ -192,51 +192,52 @@ describe('datatablesQuery tests', function () {
             done();
         });
 
-        it('should return a correct search param if non searchable but orderable column is set as sort param', function (done) {
-            var params = {
-                columns: [
-                    {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
-                    },
-                    {
-                        data: "email",
-                        name: "",
-                        searchable: "false",
-                        orderable: "true"
-                    }
-                ],
-                order: [{
-                    column: "1",
-                    dir: "desc"
-                }]
-            };
+        it('should return a correct search param if non searchable but orderable column is set as sort param',
+            function (done) {
+                var params = {
+                    columns: [
+                        {
+                            data: 'name',
+                            name: '',
+                            searchable: 'true',
+                            orderable: 'true'
+                        },
+                        {
+                            data: 'email',
+                            name: '',
+                            searchable: 'false',
+                            orderable: 'true'
+                        }
+                    ],
+                    order: [{
+                        column: '1',
+                        dir: 'desc'
+                    }]
+                };
 
-            expect(query.buildSortParameters(params)).to.equal('-email');
-            done();
-        });
+                expect(query.buildSortParameters(params)).to.equal('-email');
+                done();
+            });
 
         it('should return null if an out of bound column is set as sort param', function (done) {
             var params = {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    column: "2",
-                    dir: "desc"
+                    column: '2',
+                    dir: 'desc'
                 }]
             };
 
@@ -248,18 +249,17 @@ describe('datatablesQuery tests', function () {
             var params = {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
-                    },
-
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
+                    }
                 ]
             };
 
@@ -271,39 +271,39 @@ describe('datatablesQuery tests', function () {
             var paramsSet = [{
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    dir: "desc"
+                    dir: 'desc'
                 }]
             }, {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    column: "abc",
-                    dir: "desc"
+                    column: 'abc',
+                    dir: 'desc'
                 }]
             }];
 
@@ -317,8 +317,8 @@ describe('datatablesQuery tests', function () {
         it('should return null if params.columns is not an array', function (done) {
             var params = {
                 order: [{
-                    column: "1",
-                    dir: "desc"
+                    column: '1',
+                    dir: 'desc'
                 }]
             };
 
@@ -334,21 +334,21 @@ describe('datatablesQuery tests', function () {
             var params = {
                 columns: [
                     {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
+                        data: 'name',
+                        name: '',
+                        searchable: 'true',
+                        orderable: 'true'
                     },
                     {
-                        data: "email",
-                        name: "",
-                        searchable: "false",
-                        orderable: "true"
+                        data: 'email',
+                        name: '',
+                        searchable: 'false',
+                        orderable: 'true'
                     }
                 ],
                 order: [{
-                    column: "1",
-                    dir: "desc"
+                    column: '1',
+                    dir: 'desc'
                 }]
             };
 
@@ -393,17 +393,17 @@ describe('datatablesQuery tests', function () {
         it('should reject promise if findParams is null', function (done) {
             var query = datatablesQuery({}),
                 success = sinon.spy(),
-                error = sinon.spy();
+                error = sinon.spy(),
 
-            var params = {
-                draw: "1",
-                start: "10",
-                length: "10",
-                order: [{
-                    column: "0",
-                    dir: "desc"
-                }]
-            };
+                params = {
+                    draw: '1',
+                    start: '10',
+                    length: '10',
+                    order: [{
+                        column: '0',
+                        dir: 'desc'
+                    }]
+                };
 
             expect(query.buildFindParameters(params)).to.equal(null);
 
@@ -431,31 +431,30 @@ describe('datatablesQuery tests', function () {
         it('should reject promise if sortParams is null', function (done) {
             var query = datatablesQuery({}),
                 success = sinon.spy(),
-                error = sinon.spy();
-
-            var params = {
-                draw: "1",
-                start: "10",
-                length: "10",
-                columns: [
-                    {
-                        data: "name",
-                        name: "",
-                        searchable: "true",
-                        orderable: "false"
-                    },
-                    {
-                        data: "email",
-                        name: "",
-                        searchable: "true",
-                        orderable: "true"
-                    }
-                ],
-                order: [{
-                    column: "0",
-                    dir: "desc"
-                }]
-            };
+                error = sinon.spy(),
+                params = {
+                    draw: '1',
+                    start: '10',
+                    length: '10',
+                    columns: [
+                        {
+                            data: 'name',
+                            name: '',
+                            searchable: 'true',
+                            orderable: 'false'
+                        },
+                        {
+                            data: 'email',
+                            name: '',
+                            searchable: 'true',
+                            orderable: 'true'
+                        }
+                    ],
+                    order: [{
+                        column: '0',
+                        dir: 'desc'
+                    }]
+                };
 
             expect(query.buildSortParameters(params)).to.equal(null);
 
