@@ -99,8 +99,6 @@ describe('datatablesQuery tests', function () {
                     ]
                 };
 
-                //{ $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] }
-
                 expect(query.buildFindParameters(multipleSearchableColumns))
                     .to.deep.equal({
                         $or: [{
