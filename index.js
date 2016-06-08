@@ -132,6 +132,16 @@ var async = require('async'),
         return '-' + sortField;
     },
 
+    buildSelectParameters = function (params) {
+        return params
+            .columns
+            .map(col => col.data)
+            .reduce((selectParams, field) => {
+                selectParams[field] = 1;
+                return selectParams;
+            }, {});
+    },
+
     /**
      * Run wrapper function
      * Serves only to the Model parameter in the wrapped run function's scope
@@ -153,6 +163,7 @@ var async = require('async'),
                 length = Number(params.length),
                 findParameters = buildFindParameters(params),
                 sortParameters = buildSortParameters(params),
+                selectParameters = buildSelectParameters(params),
                 recordsTotal,
                 recordsFiltered;
 
@@ -190,6 +201,7 @@ var async = require('async'),
                     function runQuery (cb) {
                         Model
                             .find(findParameters)
+                            .select(selectParameters)
                             .limit(length)
                             .skip(start)
                             .sort(sortParameters)
@@ -234,8 +246,9 @@ var async = require('async'),
             run: run(Model),
             isNaNorUndefined: isNaNorUndefined,
             buildFindParameters: buildFindParameters,
-            buildSortParameters: buildSortParameters
-        }
+            buildSortParameters: buildSortParameters,
+            buildSelectParameters: buildSelectParameters
+        };
     };
 
 module.exports = datatablesQuery;

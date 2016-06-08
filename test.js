@@ -329,6 +329,40 @@ describe('datatablesQuery tests', function () {
         });
     });
 
+    describe('buildSelectParameters tests', function () {
+        var query = datatablesQuery({});
+
+        it('should include only and all columns passed in parameters in the select params', function (done) {
+            var params = {
+                columns: [
+                    {
+                        data: "name",
+                        name: "",
+                        searchable: "true",
+                        orderable: "true"
+                    },
+                    {
+                        data: "email",
+                        name: "",
+                        searchable: "false",
+                        orderable: "true"
+                    }
+                ],
+                order: [{
+                    column: "1",
+                    dir: "desc"
+                }]
+            };
+
+            expect(query.buildSelectParameters(params))
+                .to.deep.equal({
+                    email: 1,
+                    name: 1
+                });
+            done();
+        });
+    });
+
     describe('run tests', function () {
         it('should reject promise if params argument is lacking draw start or length', function (done) {
             var query = datatablesQuery({});
